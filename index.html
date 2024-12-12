@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ad Website</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+    iframe {
+      border: none;
+      width: 100%;
+      height: calc(100% - 40px); /* Leaves space for the top bar */
+    }
+    .top-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 40px;
+      background-color: #333;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+    }
+    .timer {
+      display: flex;
+      align-items: center;
+    }
+    .timer span {
+      margin-right: 10px;
+    }
+    #skip-btn {
+      background-color: #555;
+      color: white;
+      border: none;
+      border-radius: 3px;
+      padding: 5px 10px;
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+    #skip-btn.enabled {
+      background-color: #007bff;
+      cursor: pointer;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <div>Sponsored Content</div>
+    <div class="timer">
+      <span id="countdown">10</span>
+      <button id="skip-btn">Skip Ad</button>
+    </div>
+  </div>
+  <iframe src="https://luglawhaulsano.net/4/8644064"></iframe>
+
+  <script>
+    let countdown = 10;
+    const countdownElement = document.getElementById('countdown');
+    const skipButton = document.getElementById('skip-btn');
+
+    // Timer logic
+    const timerInterval = setInterval(() => {
+      countdown--;
+      countdownElement.textContent = countdown;
+      if (countdown === 0) {
+        clearInterval(timerInterval);
+        skipButton.classList.add('enabled');
+        skipButton.disabled = false;
+        skipButton.style.cursor = 'pointer';
+        skipButton.style.opacity = '1';
+        skipButton.addEventListener('click', () => {
+          window.location.href = 'https://abbielouis.github.io/enespaniol/';
+        });
+      }
+    }, 1000);
+
+    // Disable button until countdown finishes
+    skipButton.disabled = true;
+  </script>
+</body>
+    </html>
